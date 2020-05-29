@@ -35,7 +35,6 @@ class AdminPanel extends React.Component {
 
   onDateChange = date => {
  		this.setState({ date: date })
- 		console.log(date)
   }
 
   onChange = event => {
@@ -63,7 +62,7 @@ class AdminPanel extends React.Component {
 		event.preventDefault();
 		const rate_form = event.target;
 		const date = this.state.date;
-		const until_time = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+		const until_time = date.toISOString()
 		this.setState({until_time: until_time});
 
 		fetch('/api/v1/rates', {
@@ -118,6 +117,7 @@ class AdminPanel extends React.Component {
 		        <DateTimePicker
 		          onChange={this.onDateChange}
 		          value={this.state.date}
+		          format={"y-MM-dd hh:mm:ss"}
 		        />
 					</div>
 					<h4>Enter fixed rate</h4>
