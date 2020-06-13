@@ -21,4 +21,4 @@ It gets rates from a free API from Estonia and it may update slow
 ### Note
 
 It uses a React.js package for picking date and time and it may have accuracy issue.
-So you may need to pick grater date if you want the fixed rate to be shown. Spasibo za vremya!
+So you may need to pick grater date if you want the fixed rate to be shown.
